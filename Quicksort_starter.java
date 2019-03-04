@@ -84,10 +84,10 @@ public class Quicksort_starter {
 			// start all the thread
 			//System.out.println("Starting all the thread");
 			for (int i = 0; i < thread_list.size(); i++) {
-				num_of_thread++;
 				thread_list.get(i).run();
 			}
-
+			num_of_thread += thread_list.size();
+			
 			// wait all the thread done
 			for (int i = 0; i < thread_list.size(); i++) {
 				try {
@@ -142,7 +142,7 @@ public class Quicksort_starter {
 			}
 		}
 		
-		System.out.print(num_of_thread+ " thread had been created" + "\n");
+		System.out.print(num_of_thread+ " threads had been created" + "\n");
 		System.out.print((t_e - t_b)/1000000 + " milliseconds had used" + "\n");
 	}
 
