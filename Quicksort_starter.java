@@ -24,7 +24,15 @@ public class Quicksort_starter {
 	 * @param in_array the number array that user typed in the command line
 	 */
 	public Quicksort_starter(String[] in_array) {
-
+		input_num_str = new String[in_array.length-1];
+		//System.arraycopy(in_array, 1, input_num_str, 0, in_array.length-1);
+		for(int i = 0; i<input_num_str.length; i++) {
+			input_num_str[i] = in_array[i+1].replaceAll(" ", "");
+		}
+		t_b = System.nanoTime();
+		assign_and_run();
+		t_e = System.nanoTime();
+		print_result();
 	}
 
 	/**
